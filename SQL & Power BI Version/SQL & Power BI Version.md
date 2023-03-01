@@ -11,7 +11,7 @@
 
 <br/>
 
-# Introduction
+## Introduction
 The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are: 
 
 * [Ask](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#ask)
@@ -21,7 +21,7 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 * [Share](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#share)
 * [Act](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#act)
 
-## Deliverables 
+### Deliverables 
 1. A clear statement of the business task.
 2. A description of all data sources used.
 3. Documentation of any cleaning or manipulation of data.
@@ -29,14 +29,14 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 5. Supporting visualizations and key findings.
 6. Top three recommendations based on the analysis.
 
-## Tools Used
+### Tools Used
 * Excel - check file integrity.
 * SQL - BigQuery for data preparation and processing.
 * Power BI - for further analysis and data visualizations.
 * PowerPoint - for data visualization presentations.
 * Github- for store codes and changelogs into notebooks.
 
-## Resources
+### Resources
 * Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
 * The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
 * Details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
@@ -47,24 +47,24 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 
 --------------------------------
 
-# ASK
+## ASK
 
-## Purpose 
+### Purpose 
 Cyclistics wants to maximize the number of annual memberships by converting casual riders into annual members.
 
-## Key Stakeholders
+### Key Stakeholders
 
 * Director of marketing - Lily Moreno.
 * Cyclistic marketing analytics team. 
 * Cyclistic executive team.
 
-## Business Task 
+### Business Task 
 
 * Examine how annual members and casual riders use Cyclistic bikes differently in the last 12 months.
 * Why would casual riders buy Cyclistic annual memberships?
 * How can Cyclistic use digital media to influence casual riders to become members?
 
-## Scope of Work and Limitations
+### Scope of Work and Limitations
 
 For the purpose of this case study we will only focus on Identifying differences between Cyclistic casual and members riders using bicycles in the past 12 months. 
 
@@ -72,20 +72,20 @@ For the purpose of this case study we will only focus on Identifying differences
 
 --------------------------------
 
-# PREPARE
+## PREPARE
 
-## Data source
+### Data source
 
 First hand data coming from Cyclistic cloud storage. This study used a monthly trip dataset from January 2022  to December 2022. More detail can be found here. 
 The files were downloaded as CSV and stored locally in a folder using the file convention “YYYYMM divvy-tripdata.CSV”.
 
 ![file convention](https://i.ibb.co/Hrs79YF/fileconvention.png)
 
-## Privacy
+### Privacy
 
 Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement).
 
-## Data Integrity
+### Data Integrity
 
 1. The files were inspected in Excel in order to check the data integrity, for consistency, accuracy and completeness. No duplicates were found and all files were consistent in their headings showing as follows: 
 
@@ -107,7 +107,7 @@ Data-privacy issues prohibit using riders’ personally identifiable information
 
 2. Once inspected in Excel, each file was uploaded to a new BigQuery database named “cyclistic_data”.
 
-## BigQuery
+### BigQuery
 
 1. Added new columns:
 
@@ -120,7 +120,7 @@ Data-privacy issues prohibit using riders’ personally identifiable information
 
 <br/>
 
-## Transformation
+### Transformation
 
 <br/>
 
@@ -150,9 +150,9 @@ FROM
 
 --------------------------------
 
-# PROCESS
+## PROCESS
 
-## Data validation
+### Data validation
 
 <br/>
 
@@ -216,7 +216,7 @@ FROM
 
 <br/>
 
-## Data cleaning
+### Data cleaning
 
 <br/>
 
@@ -283,9 +283,9 @@ ORDER BY started_at ASC
 
 --------------------------------
 
-# ANALYZE
+## ANALYZE
 
-## SQL
+### SQL
 
 <br/>
 
@@ -442,10 +442,10 @@ On the other hand docked bikes have only been used by non member users in the la
 
 --------------------------------
 
-# SHARE
+## SHARE
 
 
-## Integrity check
+### Integrity check
 
 Once we understand our insights and know the key findings then we proceed to export the cleaned dataset into the data visualization tool. Once imported a data integrity check was done using Power Query inside Microsoft Power BI in order to see if information was lost in the process.
 
@@ -473,7 +473,7 @@ Data transformation must be done in columns started_at and ended_at to be recogn
 day_of_week = WEEKDAY('2022_tripdata_cleaned'[started_at],2)
 ```
 
-## Dashboard
+### Dashboard
 
 For the purpose of this project we will be making a dashboard in Power BI and a presentation for our stakeholders. That being said we created the following type of visualizations:
 
@@ -487,7 +487,7 @@ For the purpose of this project we will be making a dashboard in Power BI and a 
     
     * Number of rides by weekday - Shows the weekly rotation for Cyclistic bike rent services by user type.
 
-## Meaning and refining
+### Meaning and refining
 
 In order to ensure meaning and refining data visualization, the following steps were applied:
 
@@ -501,7 +501,7 @@ In order to ensure meaning and refining data visualization, the following steps 
 
 The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
 
-## Presentation
+### Presentation
 
 Later, all graphs that showed key finding were exported into Google Slides to create the presentation. This steps were applied:
 
@@ -518,16 +518,16 @@ Link to the presentation can be found [here](https://docs.google.com/presentatio
 
 --------------------------------
 
-# ACT
+## ACT
 
-## Conclusions
+### Conclusions
 
 1. Casual riders tend to ride longer and have extended sessions in the summer season.
 2. On average non-member clients ride longer than members.
 3. Weekends are preferred by casual riders.
 4. Electric bikes are picked more often by casual riders.
 
-## Recommendations
+### Recommendations
 
 From the analysis it can be inferred that casual riders differ in many ways from member riders. That being said the top three recommendations are:
 
@@ -537,7 +537,7 @@ From the analysis it can be inferred that casual riders differ in many ways from
 
 The marketing analytics team should focus on these insights related to the business task, and find  the way to drive the correct marketing strategy in order to maximize the memberships. 
 
-## Expand findings
+### Expand findings
 
 * The findings could be expanded searching for a correlation between tourist increase in summer season.
 * Age and sex of users could have been a good option for an even more targeted marketing strategy. 
