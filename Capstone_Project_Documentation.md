@@ -162,7 +162,7 @@ ORDER BY started_at ASC
 
 <br/>
 
-### Calculated mean and max of ride_length. Also inspect the mode of day_of_week
+### Calculate mean and max of ride_length
 ```sql
 SELECT
   AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -174,12 +174,12 @@ WHERE
 * Results:
 
 | AVG | MAX |
-| ------------- | ------------- |
+| ----|------- |
 | 19.2058 | 41387 |
 
 <br/>
 
-### Ride_id count, avg_ride_length, max_ride_length by segment
+### Calculate total rides, max and avgerage ride length by type of user
 ```sql
 SELECT
   member_casual,COUNT(*) AS num_of_rides,AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -202,7 +202,7 @@ GROUP BY
 
 <br/>
 
-### Day_mode
+### Weekday mode
 ```sql
 SELECT
   APPROX_TOP_COUNT(day_of_week, 7) AS day_mode -- 7 represent the number of values to bring the mode.
@@ -228,7 +228,7 @@ WHERE
 
 <br/>
 
-### Day_mode by type of user
+### Day mode by type of user
 ```sql
 SELECT
   member_casual, APPROX_TOP_COUNT(day_of_week, 1) AS day_mode
@@ -252,7 +252,7 @@ GROUP BY
 
 <br/>
 
-### Avg_ride by day_of_week
+### Average ride length by day of week
 ```sql
 SELECT
    day_of_week, avg(ride_length) AS avg_ride_length
@@ -279,7 +279,7 @@ ORDER BY avg(ride_length) DESC
 
 <br/>
 
-### Rideable_type by type of user
+### Bike preference by type of user
 ```sql
 SELECT
    member_casual, rideable_type, count(rideable_type) AS count_rideable_type
