@@ -1,6 +1,9 @@
+
 ## Transformation.
 
-Merge all tables and add columns ride_length and day_of_week.
+<br/>
+
+### Merge all tables and add columns ride_length and day_of_week. 
 ```sql
 SELECT
  DISTINCT *, date_diff(ended_at,started_at,MINUTE) AS ride_length, EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
@@ -20,11 +23,17 @@ FROM
 ```
 * We have 5436715 rows.
 
+<br/>
+
 # PROCESS
+
+<br/>
 
 ## Data validation.
 
-Check Duplicates.
+<br/>
+
+### Check Duplicates.
 
 ```sql
 SELECT
@@ -34,7 +43,9 @@ FROM
 ```
 * Row count did not change, that means there are no duplicates.
 
-Check if there is NULL values.
+<br/>
+
+### Check if there is NULL values.
 
 ```sql
 SELECT
@@ -60,7 +71,9 @@ WHERE (
 ```
 * 1067355 rows with at least one NULL cell.
 
-Check for anomalies in the added columns ride_length.
+<br/>
+
+### Check for anomalies in the added columns ride_length.
 ```sql
 SELECT
   MIN(ride_length),MAX(ride_length),
@@ -78,10 +91,13 @@ FROM
 ```
 * No anomalies found.
 
-# Data cleaning
+<br/>
 
-Removed rows with NULL cells.
+## Data cleaning.
 
+<br/>
+
+### Removed rows with NULL cells.
 ```sql
 SELECT
   *
@@ -110,7 +126,9 @@ WHERE NOT (
 Proceeding with this step will imply a risk of missing important data for the analysis. That being said, we proceed to replace the NULL values instead to avoid sample bias.
 In an ideal situation we would ask Cyclistic if this could mean that users also pick and drop bicycles on non-station points, or if this is related to a software issue.
 
-Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data.
+<br/>
+
+### Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data.
 ```sql
 SELECT
   TRIM(ride_id) AS ride_id,
@@ -138,9 +156,13 @@ ORDER BY started_at ASC
 * This will be our cleaned SQL table for further analysis.
 * Saved the the cleaned data as a view called ‘202202_tripdata_cleaned’
 
+<br/>
+
 # ANALYZE PHASE
 
-Calculated mean and max of ride_length. Also inspect the mode of day_of_week.
+<br/>
+
+### Calculated mean and max of ride_length. Also inspect the mode of day_of_week.
 ```sql
 SELECT
   AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -155,8 +177,9 @@ WHERE
 | ------------- | ------------- |
 | 19.2058 | 41387 |
 
+<br/>
 
-Ride_id count, avg_ride_length, max_ride_length by segment.
+### Ride_id count, avg_ride_length, max_ride_length by segment.
 ```sql
 SELECT
   member_casual,COUNT(*) AS num_of_rides,AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -177,7 +200,9 @@ GROUP BY
 
 * Members rotate faster, although casual riders have more than double ride durations on average.
 
-Day_mode
+<br/>
+
+### Day_mode
 ```sql
 SELECT
   APPROX_TOP_COUNT(day_of_week, 7) AS day_mode -- 7 represent the number of values to bring the mode.
@@ -201,7 +226,9 @@ WHERE
 
 * Saturday is the most frequent day for bike riding.
 
-Day_mode by type of user.
+<br/>
+
+### Day_mode by type of user.
 ```sql
 SELECT
   member_casual, APPROX_TOP_COUNT(day_of_week, 1) AS day_mode
@@ -223,7 +250,9 @@ GROUP BY
 
 * Rotation for casual riders is higher on Saturdays over any other day meanwhile members rotate more on thursdays.
 
-Avg_ride by day_of_week.
+<br/>
+
+### Avg_ride by day_of_week.
 ```sql
 SELECT
    day_of_week, avg(ride_length) AS avg_ride_length
@@ -248,7 +277,9 @@ ORDER BY avg(ride_length) DESC
 
 * On average rides are longer Saturdays and Sundays for both casual and member riders.
 
-Rideable_type by type of user.
+<br/>
+
+### Rideable_type by type of user.
 ```sql
 SELECT
    member_casual, rideable_type, count(rideable_type) AS count_rideable_type
@@ -272,5 +303,6 @@ ORDER BY count(rideable_type) DESC
 On the other hand docked bikes have only been used by non member users in the last 12 months.
 
 
- 
+<br/>
+
 **Further Analysis was done using Microsoft Power BI.**
