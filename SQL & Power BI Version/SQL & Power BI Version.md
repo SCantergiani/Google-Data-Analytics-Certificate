@@ -11,7 +11,6 @@
 
 <br/>
 
-
 # Introduction
 The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are; ask, prepare, process, analyze, share and act.
 
