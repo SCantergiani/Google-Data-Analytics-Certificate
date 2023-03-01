@@ -1,4 +1,5 @@
 # Google Data Analytics Certificate Capstone Project
+## SQL & Power BI version.
 
 <br/>
 
