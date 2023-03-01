@@ -1,11 +1,12 @@
 # Google Data Analytics Certificate Capstone Project
 
+<br/>
+
 **Data Analyst:** Sebastián Cantergiani
 
 **Client:** Cyclistic 
 
 **Date:** February 2023
-
 
 <br/>
 
@@ -29,10 +30,12 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 
 ## Resources:
 * Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
-* Further detail on the dashboard can be seen [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
+* The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
 * Data Analysis Process can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate)
 
 <br/>
+
+--------------------------------
 
 # ASK
 
@@ -53,6 +56,8 @@ Cyclistics wants to maximize the number of annual memberships by converting casu
 For the purpose of this case study we will only focus on Identifying differences between Cyclistic casual and members riders using bicycles in the past 12 months. 
 
 <br/>
+
+--------------------------------
 
 # PREPARE
 
@@ -123,6 +128,8 @@ FROM
 * We have 5436715 rows.
 
 <br/>
+
+--------------------------------
 
 # PROCESS
 
@@ -256,6 +263,8 @@ ORDER BY started_at ASC
 * Saved the the cleaned data as a view called ‘202202_tripdata_cleaned’
 
 <br/>
+
+--------------------------------
 
 # ANALYZE PHASE
 
@@ -411,4 +420,104 @@ On the other hand docked bikes have only been used by non member users in the la
 
 <br/>
 
-Further Analysis was done using Microsoft Power BI.
+--------------------------------
+
+# SHARE
+
+
+## Integrity check
+
+Once we understand our insights and know the key findings then we proceed to export the cleaned dataset into the data visualization tool. Once imported a data integrity check was done using Power Query inside Microsoft Power BI in order to see if information was lost in the process.
+
+The dataset cleaned previously in SQL is loaded into Power Query inside Power BI for further inspection. First we proceed to check if the row counts match with our original file by clicking ride_id > transform > statistics > count values.  
+
+![Power Query1](https://i.ibb.co/t3mf08s/image.png)
+
+Checking the column distributions we see a possible duplicate, so we investigate further to check it.
+
+![Power Query2](https://i.ibb.co/WsfZPqY/image.png)
+
+
+* The entries seem to be potentially duplicates since the coordinates and time are the same for the starting and ending points. However deleting them would delete a major proportion of our dataset. 
+* In an ideal situation we would have asked the data engineer of Cyclistic to check why this could have happened. Since we don’t have that information we will assume it’s possible to exist a datetime with the same coordinate for the starting and ending point.  
+
+Data transformation must be done in columns started_at and ended_at to be recognized as date format. 
+* Extract > Text before delimiter 
+* Change type > Date / Time
+
+![Power Query3](https://i.ibb.co/tL9D0kG/image.png)
+
+### Modified the day_of_week column to start on monday instead of sunday
+
+```dax
+day_of_week = WEEKDAY('2022_tripdata_cleaned'[started_at],2)
+```
+
+## Dashboard
+
+For the purpose of this project we will be making a dashboard in Power BI and a presentation for our stakeholders. That being said we created the following type of visualizations:
+
+* Label - Shows total rides of 2022.
+* Donough chart - Shows participation of total rides segmented by user type.
+* Bar chart - Shows bike preference by user.
+* Column charts:
+
+    * Ride length by month - Indicates the total ride time in hours  for each month by type of client.
+    * Number of rides by month - Indicates how many times the service was used by type of client.
+    * Number of rides by weekday - Shows the weekly rotation for Cyclistic bike rent services by user type.
+
+## Meaning and refining:
+
+In order to ensure meaning and refining data visualization, the following steps were applied:
+
+1. A title and a subtitle was added to add context to the analysis and indicate the scope of work.
+2. ‘Y- axis’ start point set to 0 for accurate proportions.
+3. Carefully choose a color palette, shape and size in order to contrast and draw the most important findings.
+4. Sync filters to better show findings. 
+5. Added a button to easily remove all filters.
+
+![dashboard](https://i.ibb.co/f0Xhf9H/image.png)
+
+The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
+
+## Presentation:
+
+Later, all graphs that showed key finding were exported into Google Slides to create the presentation. This steps were applied:
+
+1. Added an introduction slide with the name of the analysis and the year of study.
+2. Added context by introducing the objectives.
+3. Segmented the key findings and ordered them to show broad findings first then details. 
+4. Added small entry effects in order to maintain focus on key elements.
+5. Added a small description of findings and a more detailed description in the speaker notes.
+6. Added appendix for more details.
+
+Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
+
+<br/>
+
+--------------------------------
+
+# ACT
+
+## Conclusions:
+
+1. Casual riders tend to ride longer and have extended sessions in the summer season.
+2. On average non-member clients ride longer than members.
+3. Weekends are preferred by casual riders.
+4. Electric bikes are picked more often by casual riders.
+
+## Recommendations:
+
+From the analysis it can be inferred that casual riders differ in many ways from member riders. That being said the top three recommendations are:
+
+1. Seek for weekend member incentives such as; discounts, free passes, and alliances.
+2. Free or discounted electric bike rides since casual riders prefer them.
+3. Adjust the business goal in order to create season passes and maximize summer and fall clients.
+
+The marketing analytics team should focus on these insights related to the business task, and find  the way to drive the correct marketing strategy in order to maximize the memberships. 
+
+## Expand findings:
+
+* The findings could be expanded searching for a correlation between tourist increase in summer season.
+* Age and sex of users could have been a good option for an even more targeted marketing strategy. 
+
