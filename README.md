@@ -467,7 +467,7 @@ For the purpose of this project we will be making a dashboard in Power BI and a 
     * Number of rides by month - Indicates how many times the service was used by type of client.
     * Number of rides by weekday - Shows the weekly rotation for Cyclistic bike rent services by user type.
 
-## Meaning and refining:
+## Meaning and refining
 
 In order to ensure meaning and refining data visualization, the following steps were applied:
 
@@ -481,7 +481,7 @@ In order to ensure meaning and refining data visualization, the following steps 
 
 The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
 
-## Presentation:
+## Presentation
 
 Later, all graphs that showed key finding were exported into Google Slides to create the presentation. This steps were applied:
 
