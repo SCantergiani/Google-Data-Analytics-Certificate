@@ -1,3 +1,43 @@
+# PREPARE
+
+## Data source: 
+First hand data coming from Cyclistic cloud storage. This study used a monthly trip dataset from January 2022  to December 2022. More detail can be found here. 
+The files were downloaded as CSV and stored locally in a folder using the file convention “YYYYMM divvy-tripdata.CSV”.
+
+
+## Privacy:
+Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement)].
+
+## Data Integrity:
+1. The files were inspected in Excel in order to check the data integrity, for consistency, accuracy and completeness. No duplicates were found and all files were consistent in their headings showing as follows: 
+    * ride_id
+    * rideable_type
+    * started_at
+    * ended_at
+    * start_station_name
+    * start_station_id
+    * end_station_name
+    * end_station_id
+    * start_lat
+    * start_lng
+    * end_lat
+    * end_lng
+    * member_casual
+
+However after applying filters to the data, the completeness in start and end stations may be compromised due to missed information. This can lead to sample bias and will be further investigated in the process phase.*
+
+2. Once inspected in Excel, each file was uploaded to a new BigQuery database named “cyclistic_data”.
+
+
+3. Added new columns:
+* ride_length : calculated minutes between ended_at and started_at with “DATE_DIFF” function.
+* day_of_week: extract the number of the week for the started_at date with “EXTRACT” function.
+
+4. Merge the datasets addressing duplicates with the DISTINCT and UNION DISTINCT.
+
+5. Saved the query in a new view called "2022_tripdata" containing the following code:
+
+<br/>
 
 ## Transformation
 
