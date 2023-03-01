@@ -472,9 +472,10 @@ For the purpose of this project we will be making a dashboard in Power BI and a 
 * Donough chart - Shows participation of total rides segmented by user type.
 * Bar chart - Shows bike preference by user.
 * Column charts:
-
     * Ride length by month - Indicates the total ride time in hours  for each month by type of client.
+    
     * Number of rides by month - Indicates how many times the service was used by type of client.
+    
     * Number of rides by weekday - Shows the weekly rotation for Cyclistic bike rent services by user type.
 
 ## Meaning and refining
