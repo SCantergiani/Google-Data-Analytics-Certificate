@@ -48,7 +48,9 @@ However after applying filters to the data, the completeness in start and end st
 ### Merge all tables and add columns ride_length and day_of_week 
 ```sql
 SELECT
- DISTINCT *, date_diff(ended_at,started_at,MINUTE) AS ride_length, EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
+ DISTINCT *, 
+ date_diff(ended_at,started_at,MINUTE) AS ride_length, 
+ EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
 FROM
 (SELECT * FROM `cyclistic_data.202201-divvy-tripdata` 
   UNION DISTINCT SELECT * FROM `cyclistic_data.202202-divvy-tripdata` 
@@ -207,7 +209,8 @@ ORDER BY started_at ASC
 ### Calculate mean and max of ride_length
 ```sql
 SELECT
-  AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
+  AVG(ride_length) AS avg_ride_length, 
+  MAX(ride_length) AS max_ride_length
 FROM
   `cyclistic_data.202202_tripdata_cleaned`
 WHERE
@@ -224,7 +227,9 @@ WHERE
 ### Calculate total rides, max and avgerage ride length by type of user
 ```sql
 SELECT
-  member_casual,COUNT(*) AS num_of_rides,AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
+  member_casual,COUNT(*) AS num_of_rides,
+  AVG(ride_length) AS avg_ride_length, 
+  MAX(ride_length) AS max_ride_length
 FROM
   `cyclistic_data.202202_tripdata_cleaned`
 WHERE
@@ -273,7 +278,8 @@ WHERE
 ### Day mode by type of user
 ```sql
 SELECT
-  member_casual, APPROX_TOP_COUNT(day_of_week, 1) AS day_mode
+  member_casual, 
+  APPROX_TOP_COUNT(day_of_week, 1) AS day_mode
 FROM
   `cyclistic_data.202202_tripdata_cleaned`
 WHERE
@@ -297,7 +303,8 @@ GROUP BY
 ### Average ride length by day of week
 ```sql
 SELECT
-   day_of_week, avg(ride_length) AS avg_ride_length
+   day_of_week, 
+   avg(ride_length) AS avg_ride_length
 FROM
   `cyclistic_data.202202_tripdata_cleaned`
 GROUP BY day_of_week
@@ -324,7 +331,9 @@ ORDER BY avg(ride_length) DESC
 ### Bike preference by type of user
 ```sql
 SELECT
-   member_casual, rideable_type, count(rideable_type) AS count_rideable_type
+   member_casual, 
+   rideable_type, 
+   count(rideable_type) AS count_rideable_type
 FROM
   `cyclistic_data.202202_tripdata_cleaned`
 GROUP BY member_casual, rideable_type
