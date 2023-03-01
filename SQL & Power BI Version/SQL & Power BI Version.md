@@ -14,12 +14,12 @@
 # Introduction
 The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are: 
 
-* [Ask](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#ask)
-* [Prepare](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#prepare)
-* [Process](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#process)
-* [Analyze](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#analyze)
-* [Share](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#share)
-* [Act](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/edit/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#act)
+* [Ask](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#ask)
+* [Prepare](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#prepare)
+* [Process](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#process)
+* [Analyze](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#analyze)
+* [Share](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#share)
+* [Act](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#act)
 
 ## Deliverables 
 1. A clear statement of the business task.
