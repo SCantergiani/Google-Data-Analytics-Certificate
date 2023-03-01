@@ -11,10 +11,10 @@
 
 <br/>
 
-# Introduction:
-The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are; ask, prepare, process, analyze, share and act. More details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
+# Introduction
+The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are; ask, prepare, process, analyze, share and act.
 
-## Deliverables: 
+## Deliverables 
 1. A clear statement of the business task.
 2. A description of all data sources used.
 3. Documentation of any cleaning or manipulation of data.
@@ -22,38 +22,40 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 5. Supporting visualizations and key findings.
 6. Top three recommendations based on the analysis.
 
-## Tools Used:
+## Tools Used
 * Excel - check file integrity.
 * SQL - for data preparation and processing.
 * Power BI - for further analysis and data visualizations.
 * PowerPoint - for data visualization presentations.
 * Github- for store codes and changelogs into notebooks.
 
-## Resources:
+## Resources
 * Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
 * The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
-* Data Analysis Process can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate)
-
+* Details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
 <br/>
 
 --------------------------------
 
 # ASK
 
-## Purpose: 
+## Purpose 
 Cyclistics wants to maximize the number of annual memberships by converting casual riders into annual members.
 
-## Key Stakeholders:  
+## Key Stakeholders
+
 * Director of marketing - Lily Moreno.
 * Cyclistic marketing analytics team. 
 * Cyclistic executive team.
 
-## Business Task: 
+## Business Task 
+
 * Examine how annual members and casual riders use Cyclistic bikes differently in the last 12 months.
 * Why would casual riders buy Cyclistic annual memberships?
 * How can Cyclistic use digital media to influence casual riders to become members?
 
-## Scope of Work and Limitations: 
+## Scope of Work and Limitations
+
 For the purpose of this case study we will only focus on Identifying differences between Cyclistic casual and members riders using bicycles in the past 12 months. 
 
 <br/>
@@ -62,16 +64,19 @@ For the purpose of this case study we will only focus on Identifying differences
 
 # PREPARE
 
-## Data source: 
+## Data source
+
 First hand data coming from Cyclistic cloud storage. This study used a monthly trip dataset from January 2022  to December 2022. More detail can be found here. 
 The files were downloaded as CSV and stored locally in a folder using the file convention “YYYYMM divvy-tripdata.CSV”.
 
 ![file convention](https://i.ibb.co/Hrs79YF/fileconvention.png)
 
-## Privacy:
+## Privacy
+
 Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement).
 
-## Data Integrity:
+## Data Integrity
+
 1. The files were inspected in Excel in order to check the data integrity, for consistency, accuracy and completeness. No duplicates were found and all files were consistent in their headings showing as follows: 
     * ride_id
     * rideable_type
