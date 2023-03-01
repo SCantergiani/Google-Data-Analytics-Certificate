@@ -276,7 +276,7 @@ ORDER BY started_at ASC
 
 --------------------------------
 
-# ANALYZE PHASE
+# ANALYZE
 
 ## SQL
 
