@@ -1,4 +1,4 @@
-# PROCESS PHASE 
+PROCESS PHASE 
 
 
 --  Merge all tables and add columns ride_length and day_of_week.
@@ -23,7 +23,7 @@ FROM
 
 ----------------------------------------------------------------------
 
-## Data validation
+# Data validation
 
 -- Check Duplicates.
 
@@ -83,7 +83,7 @@ FROM
 
 ----------------------------------------------------------------------
 
-## Data cleaning
+# Data cleaning
 
 -- Removed rows with NULL cells.
 
@@ -147,7 +147,7 @@ ORDER BY started_at ASC
 
 ----------------------------------------------------------------------
 
-# ANALYZE PHASE
+ANALYZE PHASE
 
 -- Calculated mean and max of ride_length. Also inspect the mode of day_of_week.
 
