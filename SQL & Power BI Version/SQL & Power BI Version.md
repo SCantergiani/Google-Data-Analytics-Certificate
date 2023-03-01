@@ -196,26 +196,6 @@ WHERE (
 
 <br/>
 
-**Check for anomalies in the added columns ride_length**
-```sql
-SELECT
-  MIN(ride_length),MAX(ride_length),
-FROM
-  `cyclistic_data.2022_tripdata`
-``` 
-
-```sql
--- Check for anomalies in the added columns day_of_week.
-
-SELECT
-  DISTINCT(day_of_week),
-FROM
-  `cyclistic_data.2022_tripdata`
-```
-* No anomalies found.
-
-<br/>
-
 ### Data cleaning
 
 <br/>
@@ -246,12 +226,42 @@ WHERE NOT (
 * Rows went from 5436715 to 4369360. This represent over 20% of our data.
 
 * A considerable amount of NULL values are coming from station_name and station_id, which represent around 20% of the size of the initial dataset. 
-Proceeding with this step will imply a risk of missing important data for the analysis. That being said, we proceed to replace the NULL values instead to avoid sample bias.
-In an ideal situation we would ask Cyclistic if this could mean that users also pick and drop bicycles on non-station points, or if this is related to a software issue.
+Proceeding with this step will imply a risk of missing important data for the analysis. That being said, we proceed to replace the NULL values instead to avoid sample bias.In an ideal situation we would ask Cyclistic if this could mean that users also pick and drop bicycles on non-station points, or if this is related to a software issue.
 
 <br/>
 
-**Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data**
+**Check for anomalies in the added columns ride_length**
+```sql
+SELECT
+  MIN(ride_length),
+  MAX(ride_length)
+FROM
+  `cyclistic_data.2022_tripdata`
+``` 
+
+```sql
+SELECT
+  DISTINCT(day_of_week),
+FROM
+  `cyclistic_data.2022_tripdata`
+```
+* There are some rides where ride_length shows up as negative, including several hundred rides where Cyclistic took bikes out of circulation for Quality Control reasons. We will want to delete these rides.
+
+<br/>
+
+**Filtering negative ride_length**
+```sql
+SELECT
+  *
+FROM
+  `cyclistic_data.2022_tripdata`
+WHERE
+  ride_length > 0
+```
+
+<br/>
+
+**Replaced NULL values and trimmed all strings to ensure consistency and sorted the data**
 ```sql
 SELECT
   TRIM(ride_id) AS ride_id,
