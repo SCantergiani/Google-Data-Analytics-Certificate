@@ -6,7 +6,7 @@ The files were downloaded as CSV and stored locally in a folder using the file c
 
 
 ## Privacy:
-Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement)].
+Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement).
 
 ## Data Integrity:
 1. The files were inspected in Excel in order to check the data integrity, for consistency, accuracy and completeness. No duplicates were found and all files were consistent in their headings showing as follows: 
