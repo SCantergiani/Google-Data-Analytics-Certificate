@@ -1,5 +1,3 @@
-# WIP
-
 # Google Data Analytics Certificate Capstone Project
 
 **Data Analyst:** Sebastián Cantergiani
