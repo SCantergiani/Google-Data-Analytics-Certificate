@@ -11,6 +11,7 @@
 
 <br/>
 
+
 # Introduction
 The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are; ask, prepare, process, analyze, share and act.
 
@@ -289,11 +290,11 @@ FROM
 WHERE
   ride_length > 0
 ```
-* Results:
+* Table:
 
-| AVG | MAX |
-| ----|------- |
-| 19.2058 | 41387 |
+    | AVG | MAX |
+    | ----|------- |
+    | 19.2058 | 41387 |
 
 <br/>
 
@@ -311,12 +312,12 @@ GROUP BY
   member_casual
 ```
 
-* Results: 
+* Table: 
 
-| member_casual | num_of_rides | avg_ride_length |max_ride_length|
-|---------------|--------------|-----------------|---------------|
-| member        |  3143445     | 12.5638         | 1559          |
-| casual        |  2184567     | 28.7632         | 41387         |
+    | member_casual | num_of_rides | avg_ride_length |max_ride_length|
+    |---------------|--------------|-----------------|---------------|
+    | member        |  3143445     | 12.5638         | 1559          |
+    | casual        |  2184567     | 28.7632         | 41387         |
 
 * Members rotate faster, although casual riders have more than double ride durations on average.
 
@@ -332,17 +333,17 @@ WHERE
   ride_length > 0 
 ```
 
-* Results: 
+* Table: 
 
-|Day Nº | Count |
-|-------|-------|
-|  7   | 861084 |
-|  5   | 792110 |
-|  4   | 755137 |
-|  6   | 754496 |
-|  3   | 734095 |
-|  1   | 728420 |
-|  2   | 702670 |
+    |Day Nº | Count |
+    |-------|-------|
+    |  7   | 861084 |
+    |  5   | 792110 |
+    |  4   | 755137 |
+    |  6   | 754496 |
+    |  3   | 734095 |
+    |  1   | 728420 |
+    |  2   | 702670 |
 
 * Saturday is the most frequent day for bike riding.
 
@@ -360,14 +361,14 @@ WHERE
 GROUP BY 
   member_casual
 ```
-* Results: 
+* Table: 
 
-|member_casual | day_mode | count_day_mode|
-|--------------|----------|---------------|
-|    casual    |   7      | 446447        |
-|    member    |   5      | 501335        |
+   |member_casual | day_mode | count_day_mode|
+   |--------------|----------|---------------|
+   |    casual    |   7      | 446447        |
+   |    member    |   5      | 501335        |
 
-*Week numbers Sunday = 1 and Saturday 7.*
+   *Week numbers Sunday = 1 and Saturday 7.*
 
 * Rotation for casual riders is higher on Saturdays over any other day meanwhile members rotate more on thursdays.
 
@@ -386,17 +387,17 @@ ORDER BY avg(ride_length) DESC
 
 * Results:
 
-|day_of_week | avg_ride_length |
-|------------|-----------------|
-|        1   |  23.9135086     |
-|        7   |  23.4546722     |
-|        6   |  18.7637588     |
-|        2   |  18.1948055     |
-|        5   |  16.8689866     |
-|        3   |  16.4938298     |
-|        4   |  16.2901142     |
+   |day_of_week | avg_ride_length |
+   |------------|-----------------|
+   |        1   |  23.9135086     |
+   |        7   |  23.4546722     |
+   |        6   |  18.7637588     |
+   |        2   |  18.1948055     |
+   |        5   |  16.8689866     |
+   |        3   |  16.4938298     |
+   |        4   |  16.2901142     |
 
-*Week numbers Sunday = 1 and Saturday 7*
+   *Week numbers Sunday = 1 and Saturday 7*
 
 * On average rides are longer Saturdays and Sundays for both casual and member riders.
 
@@ -414,15 +415,15 @@ GROUP BY member_casual, rideable_type
 ORDER BY count(rideable_type) DESC
 ```
 
-* Results:
+* Table:
 
-|          member_casual | rideable_type | count_rideable_type|
-|------------------------|---------------|--------------------|
-|          member        | classic_bike  | 1685694|
-|          member        | electric_bike | 1457751|
-|          casual        | electric_bike | 1129727|
-|          casual        | classic_bike  | 879193|
-|          casual        | docked_bike   | 175647|
+   |          member_casual | rideable_type | count_rideable_type|
+   |------------------------|---------------|--------------------|
+   |          member        | classic_bike  | 1685694|
+   |          member        | electric_bike | 1457751|
+   |          casual        | electric_bike | 1129727|
+   |          casual        | classic_bike  | 879193|
+   |          casual        | docked_bike   | 175647|
 
 * From the analysis we can observe that members use more classic bikes while casual riders prefer electric bikes. 
 On the other hand docked bikes have only been used by non member users in the last 12 months.
