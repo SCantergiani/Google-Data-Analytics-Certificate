@@ -1,5 +1,61 @@
 # WIP
 
+# Google Data Analytics Certificate Capstone Project
+
+**Data Analyst:** Sebastián Cantergiani
+
+**Client:** Cyclistic 
+
+**Date:** February 2023
+
+
+<br/>
+
+# Introduction:
+The Cyclistic case study  is a capstone project for Google Data Analytics Professional Course that will go through each step of the Data Analysis Process. Which are; ask, prepare, process, analyze, share and act. More details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
+
+## Deliverables: 
+1. A clear statement of the business task.
+2. A description of all data sources used.
+3. Documentation of any cleaning or manipulation of data.
+4. A summary of the analysis.
+5. Supporting visualizations and key findings.
+6. Top three recommendations based on the analysis.
+
+## Tools Used:
+* Excel - check file integrity.
+* SQL - for data preparation and processing.
+* Power BI - for further analysis and data visualizations.
+* PowerPoint - for data visualization presentations.
+* Github- for store codes and changelogs into notebooks.
+
+## Resources:
+* Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
+* Further detail on the dashboard can be seen [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
+* Data Analysis Process can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate)
+
+<br/>
+
+# ASK
+
+## Purpose: 
+Cyclistics wants to maximize the number of annual memberships by converting casual riders into annual members.
+
+## Key Stakeholders:  
+* Director of marketing - Lily Moreno.
+* Cyclistic marketing analytics team. 
+* Cyclistic executive team.
+
+## Business Task: 
+* Examine how annual members and casual riders use Cyclistic bikes differently in the last 12 months.
+* Why would casual riders buy Cyclistic annual memberships?
+* How can Cyclistic use digital media to influence casual riders to become members?
+
+## Scope of Work and Limitations: 
+For the purpose of this case study we will only focus on Identifying differences between Cyclistic casual and members riders using bicycles in the past 12 months. 
+
+<br/>
+
 # PREPARE
 
 ## Data source: 
@@ -357,4 +413,4 @@ On the other hand docked bikes have only been used by non member users in the la
 
 <br/>
 
-**Further Analysis was done using Microsoft Power BI.**
+Further Analysis was done using Microsoft Power BI.
