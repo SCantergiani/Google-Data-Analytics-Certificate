@@ -1,9 +1,9 @@
 
-## Transformation.
+## Transformation
 
 <br/>
 
-### Merge all tables and add columns ride_length and day_of_week. 
+### Merge all tables and add columns ride_length and day_of_week 
 ```sql
 SELECT
  DISTINCT *, date_diff(ended_at,started_at,MINUTE) AS ride_length, EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
@@ -29,11 +29,11 @@ FROM
 
 <br/>
 
-## Data validation.
+## Data validation
 
 <br/>
 
-### Check Duplicates.
+### Check Duplicates
 
 ```sql
 SELECT
@@ -45,7 +45,7 @@ FROM
 
 <br/>
 
-### Check if there is NULL values.
+### Check if there is NULL values
 
 ```sql
 SELECT
@@ -73,7 +73,7 @@ WHERE (
 
 <br/>
 
-### Check for anomalies in the added columns ride_length.
+### Check for anomalies in the added columns ride_length
 ```sql
 SELECT
   MIN(ride_length),MAX(ride_length),
@@ -93,11 +93,11 @@ FROM
 
 <br/>
 
-## Data cleaning.
+## Data cleaning
 
 <br/>
 
-### Removed rows with NULL cells.
+### Removed rows with NULL cells
 ```sql
 SELECT
   *
@@ -128,7 +128,7 @@ In an ideal situation we would ask Cyclistic if this could mean that users also 
 
 <br/>
 
-### Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data.
+### Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data
 ```sql
 SELECT
   TRIM(ride_id) AS ride_id,
@@ -162,7 +162,7 @@ ORDER BY started_at ASC
 
 <br/>
 
-### Calculated mean and max of ride_length. Also inspect the mode of day_of_week.
+### Calculated mean and max of ride_length. Also inspect the mode of day_of_week
 ```sql
 SELECT
   AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -179,7 +179,7 @@ WHERE
 
 <br/>
 
-### Ride_id count, avg_ride_length, max_ride_length by segment.
+### Ride_id count, avg_ride_length, max_ride_length by segment
 ```sql
 SELECT
   member_casual,COUNT(*) AS num_of_rides,AVG(ride_length) AS avg_ride_length, MAX(ride_length) AS max_ride_length
@@ -228,7 +228,7 @@ WHERE
 
 <br/>
 
-### Day_mode by type of user.
+### Day_mode by type of user
 ```sql
 SELECT
   member_casual, APPROX_TOP_COUNT(day_of_week, 1) AS day_mode
@@ -252,7 +252,7 @@ GROUP BY
 
 <br/>
 
-### Avg_ride by day_of_week.
+### Avg_ride by day_of_week
 ```sql
 SELECT
    day_of_week, avg(ride_length) AS avg_ride_length
@@ -279,7 +279,7 @@ ORDER BY avg(ride_length) DESC
 
 <br/>
 
-### Rideable_type by type of user.
+### Rideable_type by type of user
 ```sql
 SELECT
    member_casual, rideable_type, count(rideable_type) AS count_rideable_type
