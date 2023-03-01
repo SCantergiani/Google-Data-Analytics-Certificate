@@ -6,6 +6,7 @@
 First hand data coming from Cyclistic cloud storage. This study used a monthly trip dataset from January 2022  to December 2022. More detail can be found here. 
 The files were downloaded as CSV and stored locally in a folder using the file convention “YYYYMM divvy-tripdata.CSV”.
 
+![file convention](https://i.ibb.co/Hrs79YF/fileconvention.png)
 
 ## Privacy:
 Data-privacy issues prohibit using riders’ personally identifiable information. More detail can be found [here](https://ride.divvybikes.com/data-license-agreement).
