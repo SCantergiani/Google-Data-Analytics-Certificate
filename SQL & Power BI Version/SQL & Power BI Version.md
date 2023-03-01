@@ -35,6 +35,7 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 * Details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
 * A PDF version of this study can be found [here]().
 * Other versions of this analysis using different tools can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/4445d154066be1556dbc47aaafa3f019214b9afc/README.md)
+
 <br/>
 
 --------------------------------
