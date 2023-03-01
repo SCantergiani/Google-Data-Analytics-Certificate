@@ -24,7 +24,7 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 
 ## Tools Used
 * Excel - check file integrity.
-* SQL - for data preparation and processing.
+* SQL - BigQuery for data preparation and processing.
 * Power BI - for further analysis and data visualizations.
 * PowerPoint - for data visualization presentations.
 * Github- for store codes and changelogs into notebooks.
@@ -78,6 +78,7 @@ Data-privacy issues prohibit using riders’ personally identifiable information
 ## Data Integrity
 
 1. The files were inspected in Excel in order to check the data integrity, for consistency, accuracy and completeness. No duplicates were found and all files were consistent in their headings showing as follows: 
+
     * ride_id
     * rideable_type
     * started_at
@@ -92,18 +93,20 @@ Data-privacy issues prohibit using riders’ personally identifiable information
     * end_lng
     * member_casual
 
-However after applying filters to the data, the completeness in start and end stations may be compromised due to missed information. This can lead to sample bias and will be further investigated in the process phase.*
+    After applying filters to the data, the completeness in start and end stations may be compromised due to missed information. This can lead to sample bias and will be further investigated in the process phase.
 
 2. Once inspected in Excel, each file was uploaded to a new BigQuery database named “cyclistic_data”.
 
+## BigQuery
 
-3. Added new columns:
-* ride_length : calculated minutes between ended_at and started_at with “DATE_DIFF” function.
-* day_of_week: extract the number of the week for the started_at date with “EXTRACT” function.
+1. Added new columns:
 
-4. Merge the datasets addressing duplicates with the DISTINCT and UNION DISTINCT.
+    * ride_length : calculated minutes between ended_at and started_at with “DATE_DIFF” function.
+    * day_of_week: extract the number of the week for the started_at date with “EXTRACT” function.
 
-5. Saved the query in a new view called "2022_tripdata" containing the following code:
+2. Merge the datasets addressing duplicates with the DISTINCT and UNION DISTINCT.
+
+3. Saved the query in a new view called "2022_tripdata" containing the following code:
 
 <br/>
 
@@ -111,7 +114,7 @@ However after applying filters to the data, the completeness in start and end st
 
 <br/>
 
-### Merge all tables and add columns ride_length and day_of_week 
+**Merge all tables and added columns ride_length and day_of_week** 
 ```sql
 SELECT
  DISTINCT *, 
@@ -139,13 +142,11 @@ FROM
 
 # PROCESS
 
-<br/>
-
 ## Data validation
 
 <br/>
 
-### Check Duplicates
+**Check duplicates**
 
 ```sql
 SELECT
@@ -157,7 +158,7 @@ FROM
 
 <br/>
 
-### Check if there is NULL values
+**Check if there is NULL values**
 
 ```sql
 SELECT
@@ -185,7 +186,7 @@ WHERE (
 
 <br/>
 
-### Check for anomalies in the added columns ride_length
+**Check for anomalies in the added columns ride_length**
 ```sql
 SELECT
   MIN(ride_length),MAX(ride_length),
@@ -209,7 +210,7 @@ FROM
 
 <br/>
 
-### Removed rows with NULL cells
+**Removed rows with NULL cells**
 ```sql
 SELECT
   *
@@ -240,7 +241,7 @@ In an ideal situation we would ask Cyclistic if this could mean that users also 
 
 <br/>
 
-### Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data
+**Replaced NULL values, filtered ride_length dates below 0, trimmed all strings to ensure consistency and sorted the data**
 ```sql
 SELECT
   TRIM(ride_id) AS ride_id,
@@ -274,9 +275,11 @@ ORDER BY started_at ASC
 
 # ANALYZE PHASE
 
+## SQL
+
 <br/>
 
-### Calculate mean and max of ride_length
+**Calculate mean and max of ride_length**
 ```sql
 SELECT
   AVG(ride_length) AS avg_ride_length, 
@@ -294,7 +297,7 @@ WHERE
 
 <br/>
 
-### Calculate total rides, max and avgerage ride length by type of user
+**Calculate total rides, max and avgerage ride length by type of user**
 ```sql
 SELECT
   member_casual,COUNT(*) AS num_of_rides,
@@ -319,7 +322,7 @@ GROUP BY
 
 <br/>
 
-### Weekday mode
+**Weekday mode**
 ```sql
 SELECT
   APPROX_TOP_COUNT(day_of_week, 7) AS day_mode -- 7 represent the number of values to bring the mode.
@@ -345,7 +348,7 @@ WHERE
 
 <br/>
 
-### Day mode by type of user
+**Day mode by type of user**
 ```sql
 SELECT
   member_casual, 
@@ -370,7 +373,7 @@ GROUP BY
 
 <br/>
 
-### Average ride length by day of week
+**Average ride length by day of week**
 ```sql
 SELECT
    day_of_week, 
@@ -384,6 +387,7 @@ ORDER BY avg(ride_length) DESC
 * Results:
 
 |day_of_week | avg_ride_length |
+|------------|-----------------|
 |        1   |  23.9135086     |
 |        7   |  23.4546722     |
 |        6   |  18.7637588     |
@@ -398,7 +402,7 @@ ORDER BY avg(ride_length) DESC
 
 <br/>
 
-### Bike preference by type of user
+**Bike preference by type of user**
 ```sql
 SELECT
    member_casual, 
@@ -453,7 +457,7 @@ Data transformation must be done in columns started_at and ended_at to be recogn
 
 ![Power Query3](https://i.ibb.co/tL9D0kG/image.png)
 
-### Modified the day_of_week column to start on monday instead of sunday
+**Modified the day_of_week column to start on monday instead of sunday**
 
 ```dax
 day_of_week = WEEKDAY('2022_tripdata_cleaned'[started_at],2)
