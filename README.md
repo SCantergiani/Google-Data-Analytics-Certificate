@@ -499,14 +499,14 @@ Link to the presentation can be found [here](https://docs.google.com/presentatio
 
 # ACT
 
-## Conclusions:
+## Conclusions
 
 1. Casual riders tend to ride longer and have extended sessions in the summer season.
 2. On average non-member clients ride longer than members.
 3. Weekends are preferred by casual riders.
 4. Electric bikes are picked more often by casual riders.
 
-## Recommendations:
+## Recommendations
 
 From the analysis it can be inferred that casual riders differ in many ways from member riders. That being said the top three recommendations are:
 
@@ -516,7 +516,7 @@ From the analysis it can be inferred that casual riders differ in many ways from
 
 The marketing analytics team should focus on these insights related to the business task, and find  the way to drive the correct marketing strategy in order to maximize the memberships. 
 
-## Expand findings:
+## Expand findings
 
 * The findings could be expanded searching for a correlation between tourist increase in summer season.
 * Age and sex of users could have been a good option for an even more targeted marketing strategy. 
