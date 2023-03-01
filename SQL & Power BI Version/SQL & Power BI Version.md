@@ -40,7 +40,7 @@ The Cyclistic case study  is a capstone project for Google Data Analytics Profes
 * Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
 * The dashboard can be downloaded [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
 * Details of the case study can be found [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
-* A PDF version of this study can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/b0d6130b6b39ff92d3353a0143429a7f145a2e27/SQL%20&%20Power%20BI%20Version/PDF%20Version/Cyclistic-Capstone-SQL-&-PowerBI-Version..pdf).
+* A PDF version of this study can be found [here](https://raw.githubusercontent.com/SCantergiani/Google-Data-Analytics-Certificate/main/SQL%20%26%20Power%20BI%20Version/PDF%20Version/Cyclistic-Capstone-SQL-%26-PowerBI-Version..pdf).
 * Other versions of this analysis using different tools can be found [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate#google-data-analytics-certificate-capstone-project)
 
 <br/>
