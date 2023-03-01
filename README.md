@@ -7,5 +7,5 @@ This is a Capstone Project for Google Data Analytics Professional Certificate. T
 
 In order to show different toolsets, the study case was done using:
 
-### :books: [SQL & Power BI Version](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/95a1c33b5a7a078d1dbcb689f013d044100e5b34/SQL%20&%20Power%20BI%20Version/SQL%20&%20Power%20BI%20Version.md#google-data-analytics-certificate-capstone-project)
+### :books: [SQL & Power BI Version](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20%26%20Power%20BI%20Version/SQL%20%26%20Power%20BI%20Version.md#google-data-analytics-certificate-capstone-project)
 ### :books: [R & Tableau Version]() (WIP)
