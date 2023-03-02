@@ -210,7 +210,7 @@ Proceeding with this step will imply a risk of missing important data for the an
 
 <br/>
 
-We will want to add the next columns to calculate the length of ride in minutes and extract the day of the week:
+That being said, we will want to add the next columns to calculate the length of ride in minutes and extract the day of the week:
 
 * ride_length
 * day_of_week
