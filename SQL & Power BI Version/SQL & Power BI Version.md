@@ -232,7 +232,7 @@ After, we update 'cyclistic_data.2022_tripdata' to reflect our changes.
 
 <br/>
 
-**Check for anomalies in the added columns ride_length**
+**Check for anomalies in the added columns**
 ```sql
 SELECT
   MIN(ride_length),
