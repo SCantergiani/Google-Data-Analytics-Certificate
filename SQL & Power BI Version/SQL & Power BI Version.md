@@ -126,7 +126,7 @@ SELECT DISTINCT * FROM `cyclistic_data.202201-divvy-tripdata`
   UNION DISTINCT SELECT * FROM `cyclistic_data.202209-divvy-tripdata`
   UNION DISTINCT SELECT * FROM `cyclistic_data.202210-divvy-tripdata`
   UNION DISTINCT SELECT * FROM `cyclistic_data.202211-divvy-tripdata`
-  UNION DISTINCT SELECT * FROM `cyclistic_data.202212-divvy-tripdata`)
+  UNION DISTINCT SELECT * FROM `cyclistic_data.202212-divvy-tripdata`
 ```
 * We have 5436715 rows.
 
