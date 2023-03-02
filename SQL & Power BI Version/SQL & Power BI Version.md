@@ -173,8 +173,6 @@ WHERE (
   OR end_lat IS NULL
   OR end_lng IS NULL
   OR member_casual IS NULL
-  OR ride_length IS NULL
-  OR day_of_week IS NULL)
 ```
 * 1067355 rows with at least one NULL cell.
 
@@ -203,9 +201,7 @@ WHERE NOT (
   OR start_lng IS NULL
   OR end_lat IS NULL
   OR end_lng IS NULL
-  OR member_casual IS NULL
-  OR ride_length IS NULL
-  OR day_of_week IS NULL)
+  OR member_casual IS NULL)
 ```
 * Rows went from 5436715 to 4369360. This represent over 20% of our data.
 
