@@ -544,7 +544,7 @@ Link to the presentation can be found [here](https://docs.google.com/presentatio
 
 From the analysis it can be inferred that casual riders differ in many ways from member riders. That being said the top three recommendations are:
 
-1. Seek for weekend member incentives such as; discounts, free passes, and alliances.
+1. Seek for weekend member incentives such as discounts, free passes, and alliances.
 2. Free or discounted electric bike rides since casual riders prefer them.
 3. Adjust the business goal in order to create season passes and maximize summer and fall clients.
 
