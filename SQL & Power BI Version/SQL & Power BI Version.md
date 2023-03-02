@@ -105,33 +105,17 @@ Data-privacy issues prohibit using riders’ personally identifiable information
 
     After applying filters to the data, the completeness in start and end stations may be compromised due to missed information. This can lead to sample bias and will be further investigated in the process phase.
 
-2. Once inspected in Excel, each file was uploaded to a new BigQuery database named “cyclistic_data”.
-
-### BigQuery
-
-1. Added new columns:
-
-    * ride_length : calculated minutes between ended_at and started_at with “DATE_DIFF” function.
-    * day_of_week: extract the number of the week for the started_at date with “EXTRACT” function.
-
-2. Merge the datasets addressing duplicates with the DISTINCT and UNION DISTINCT.
-
-3. Saved the query in a new view called "2022_tripdata" containing the following code:
-
-<br/>
+2. Once inspected in Excel, each file was uploaded to a new BigQuery database with the same names. 
 
 ### Transformation
 
+We consolidate all tables into one dataset, and we use DISTINCT in order to avoid duplicates.
+
 <br/>
 
-**Merge all tables and added columns ride_length and day_of_week** 
+**Merge all tables**
 ```sql
-SELECT
- DISTINCT *, 
- date_diff(ended_at,started_at,MINUTE) AS ride_length, 
- EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
-FROM
-(SELECT * FROM `cyclistic_data.202201-divvy-tripdata` 
+SELECT DISTINCT * FROM `cyclistic_data.202201-divvy-tripdata` 
   UNION DISTINCT SELECT * FROM `cyclistic_data.202202-divvy-tripdata` 
   UNION DISTINCT SELECT * FROM `cyclistic_data.202203-divvy-tripdata`
   UNION DISTINCT SELECT * FROM `cyclistic_data.202204-divvy-tripdata`
@@ -146,7 +130,7 @@ FROM
 ```
 * We have 5436715 rows.
 
-<br/>
+Lastly the query was stored in a new view called "2022_tripdata".
 
 --------------------------------
 
@@ -156,7 +140,7 @@ FROM
 
 <br/>
 
-**Check duplicates**
+**Double check duplicates**
 
 ```sql
 SELECT
@@ -230,6 +214,23 @@ Proceeding with this step will imply a risk of missing important data for the an
 
 <br/>
 
+We will want to add the next columns to calculate the length of ride in minutes and extract the day of the week:
+
+* ride_length
+* day_of_week
+
+```sql
+SELECT
+ *, 
+ date_diff(ended_at,started_at,MINUTE) AS ride_length, 
+ EXTRACT(DAYOFWEEK FROM started_at) AS  day_of_week
+ FROM
+ cyclistic_data.2022_tripdata
+```
+After, we update 'cyclistic_data.2022_tripdata' to reflect our changes. 
+
+<br/>
+
 **Check for anomalies in the added columns ride_length**
 ```sql
 SELECT
@@ -246,6 +247,7 @@ FROM
   `cyclistic_data.2022_tripdata`
 ```
 * There are some rides where ride_length shows up as negative, including several hundred rides where Cyclistic took bikes out of circulation for Quality Control reasons. We will want to delete these rides.
+* Day of week did not show anomalies.
 
 <br/>
 
