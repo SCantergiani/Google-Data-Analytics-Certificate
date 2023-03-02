@@ -174,7 +174,7 @@ WHERE (
   OR end_lng IS NULL
   OR member_casual IS NULL
 ```
-* 1067355 rows with at least one NULL cell.
+* There are 1067355 rows with at least one NULL cell.
 
 <br/>
 
