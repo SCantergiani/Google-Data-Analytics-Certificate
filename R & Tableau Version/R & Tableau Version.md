@@ -344,7 +344,7 @@ alltrips$started_at <- as_datetime(alltrips$started_at)
 **Add a “ride_length” calculation to all_trips (in seconds)**
 
 ``` r
-alltrips$ride_length <- difftime(alltrips$ended_at,alltrips$started_at, units = "mins")
+alltrips$ride_length <- difftime(alltrips$ended_at,alltrips$started_at, units = "sec")
 ```
 
 <br/>
