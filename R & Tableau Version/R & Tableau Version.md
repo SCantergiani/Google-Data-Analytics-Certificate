@@ -510,7 +510,7 @@ write.csv(alltrips_v2,file = "C:/Users/Seb/Documents/R_dataframe.csv")
 
 ------------------------------------------------------------------------
 
-## SHARE (WIP)
+## SHARE
 
 Once we understand our insights and know the key findings then we
 proceed to export the cleaned dataset into Tableau and check we miss any
