@@ -148,7 +148,7 @@ library(skimr)
 
 <br/>
 
-**We importing files into R**
+**Importing files into R**
 
 ``` r
 Month_202201 <- read.csv("202201-divvy-tripdata.csv")
