@@ -553,7 +553,7 @@ Slides to create the presentation. This steps were applied:
     description in the speaker notes.
 6.  Added appendix for more details.
 
-Link to the presentation can be found [here]().
+Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).).
 
 <br/>
 
