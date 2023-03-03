@@ -480,6 +480,14 @@ table_1 <- alltrips_v2 %>%
 
 <br/>
 
+**For a better visualization we proceed to order the days labels**
+
+``` r
+alltrips_v2$day_of_week <- ordered(alltrips_v2$day_of_week, levels=c("Sunday", "Monday", 
+"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+```
+<br/>
+
 **Visualize avg duration and number of rides data by type and weekday**
 
 ``` r
@@ -553,7 +561,7 @@ following steps were applied:
 
 ![]()
 
-The dashboard can be seen [here WIP]().
+The dashboard can be seen **here - WIP** .
 
 ### Presentation
 
