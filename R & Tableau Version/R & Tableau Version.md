@@ -2,7 +2,7 @@
 
 # Google Data Analytics Certificate Capstone Project
 
-## R & Tableau version.
+## R & Tableau version
 
 <br/>
 
