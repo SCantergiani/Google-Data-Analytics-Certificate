@@ -1,5 +1,3 @@
-# WIP
-
 # Google Data Analytics Certificate Capstone Project
 
 ## R & Tableau version
@@ -492,7 +490,7 @@ write.csv(alltrips_v2,file = "C:/Users/Seb/Documents/R_dataframe.csv")
 
 ------------------------------------------------------------------------
 
-## SHARE (WIP)
+## SHARE
 
 Once we understand our insights and know the key findings then we
 proceed to export the cleaned dataset into Tableau and check we miss any
@@ -530,8 +528,6 @@ following steps were applied:
 2.  ‘Y- axis’ start point set to 0 for accurate proportions.
 3.  Carefully choose a color palette, shape and size in order to
     contrast and draw the most important findings.
-4.  Sync filters to better show findings.
-5.  Added a button to easily remove all filters.
 
 ![dashboard](https://i.ibb.co/MBDJtn4/image.png)
 
