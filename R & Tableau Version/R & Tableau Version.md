@@ -20,12 +20,12 @@ The Cyclistic case study is a capstone project for Google Data Analytics
 Professional Course that will go through each step of the Data Analysis
 Process. Which are:
 
-- [Ask]()
-- [Prepare]()
-- [Process]()
-- [Analyze]()
-- [Share]()
-- [Act]()
+- [Ask](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#ask)
+- [Prepare](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#prepare)
+- [Process](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#process)
+- [Analyze](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#analyze)
+- [Share](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#share)
+- [Act](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20&%20Tableau%20Version/R%20&%20Tableau%20Version.md#act)
 
 ### Deliverables
 
