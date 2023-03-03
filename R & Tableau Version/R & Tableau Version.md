@@ -496,7 +496,7 @@ ggplot(data = table_1, aes(x = day_of_week, y = number_of_rides, fill=member_cas
   labs(title = "Number of rides by type of user") # Added title
 ```
 
-![](R_Cyclistic_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![ggplot1](https://i.ibb.co/9tG18jp/image.png)<!-- -->
 
 <br/>
 
@@ -508,7 +508,9 @@ ggplot(data = table_1, aes(x = day_of_week, y = avg_duration, fill=member_casual
   labs(title = "Average duration by type of user")
 ```
 
-![](R_Cyclistic_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> <br/>
+![ggplot2](https://i.ibb.co/99gXMmq/image.png)<!-- -->
+
+br/>
 
 **We save the cleaned dataframe**
 
