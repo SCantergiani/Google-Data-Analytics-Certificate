@@ -48,8 +48,8 @@ Process. Which are:
 
 - Link to the presentation can be found
   [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
-- The dashboard can be downloaded
-  [here](https://drive.google.com/drive/folders/1RkufrnRH9Nz_MM78vSggcP9WDupGBscI?usp=share_link).
+- The dashboard can seen
+  [here](https://public.tableau.com/views/Cyclistic_16778151668290/Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link).
 - Details of the case study can be found
   [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
 - SQL & Power BI version of this analysis can be found
@@ -535,7 +535,7 @@ following steps were applied:
 
 ![dashboard]()
 
-The dashboard can be seen [here]().
+The dashboard can be seen [here](https://public.tableau.com/views/Cyclistic_16778151668290/Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link).
 
 ### Presentation
 
