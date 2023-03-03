@@ -551,9 +551,9 @@ following steps were applied:
 4.  Sync filters to better show findings.
 5.  Added a button to easily remove all filters.
 
-![dashboard]()
+![]()
 
-The dashboard can be seen [here]().
+The dashboard can be seen [here WIP]().
 
 ### Presentation
 
