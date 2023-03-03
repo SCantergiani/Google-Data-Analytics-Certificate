@@ -1,8 +1,3 @@
-R Cyclistic
-================
-Sebastián Cantergiani
-2023-03-02
-
 # WIP
 
 # Google Data Analytics Certificate Capstone Project
