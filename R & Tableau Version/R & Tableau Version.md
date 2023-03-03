@@ -500,8 +500,7 @@ formats after loading our data:
 
 ### Dashboard
 
-For the purpose of this project we will be making a dashboard in Power
-BI and a presentation for our stakeholders. That being said we created
+For the purpose of this project we will be making a dashboard and a presentation for our stakeholders. That being said we created
 the following type of visualizations:
 
 - Label - Shows total rides of 2022.
