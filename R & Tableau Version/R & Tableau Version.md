@@ -533,7 +533,7 @@ following steps were applied:
 4.  Sync filters to better show findings.
 5.  Added a button to easily remove all filters.
 
-![dashboard]()
+![dashboard](https://i.ibb.co/MBDJtn4/image.png)
 
 The dashboard can be seen [here](https://public.tableau.com/views/Cyclistic_16778151668290/Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link).
 
