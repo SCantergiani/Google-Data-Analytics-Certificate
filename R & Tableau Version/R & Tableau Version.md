@@ -1,3 +1,8 @@
+R Cyclistic
+================
+Sebastián Cantergiani
+2023-03-02
+
 # WIP
 
 # Google Data Analytics Certificate Capstone Project
@@ -167,7 +172,8 @@ Month_202212 <- read.csv("202212-divvy-tripdata.csv")
 
 <br/>
 
-**Befores we merge them we must check for consistency**
+**Before we merge them we must check for consistency in columns type and
+name**
 
 ``` r
 colnames(Month_202201)
@@ -201,7 +207,20 @@ str(Month_202211)
 str(Month_202212)
 ```
 
-- No anomalies were found. We can proceed to merge them
+- The format of starting_at and ending_at for the months April and May
+  doesn’t include seconds. We must fix this in order to proceed or it
+  will lead to errors later.
+
+<br/>
+
+**Adding a “seconds” value to the string”**
+
+``` r
+Month_202204$started_at <- paste(Month_202204$started_at,":00")
+Month_202204$ended_at <- paste(Month_202204$ended_at,":00")
+Month_202205$started_at <- paste(Month_202205$started_at,":00")
+Month_202205$ended_at <- paste(Month_202205$ended_at,":00")
+```
 
 <br/>
 
@@ -265,8 +284,8 @@ Data summary
 |:-------------------|----------:|--------------:|----:|----:|-------:|---------:|-----------:|
 | ride_id            |         0 |             1 |   7 |  16 |      0 |  5436715 |          0 |
 | rideable_type      |         0 |             1 |  11 |  13 |      0 |        3 |          0 |
-| started_at         |         0 |             1 |  15 |  19 |      0 |  3972013 |          0 |
-| ended_at           |         0 |             1 |  15 |  19 |      0 |  3982271 |          0 |
+| started_at         |         0 |             1 |  19 |  20 |      0 |  3972013 |          0 |
+| ended_at           |         0 |             1 |  19 |  20 |      0 |  3982271 |          0 |
 | start_station_name |         0 |             1 |   0 |  64 | 675473 |     1671 |          0 |
 | start_station_id   |         0 |             1 |   0 |  44 | 675473 |     1338 |          0 |
 | end_station_name   |         0 |             1 |   0 |  64 | 724283 |     1685 |          0 |
@@ -318,48 +337,12 @@ alltrips$day_of_week <- format(as.Date(alltrips$date), "%A") #Extract day of wee
 
 <br/>
 
-**The following codes were used trying to fix the formatting of
-started_at and ended_at, but without luck**
-
-``` r
-alltrips %>% 
-  mutate(started_at = as.numeric(as.character(started_at)), 
-  ended_at = as.numeric(as.character(ended_at)))
-```
-
-    ## Warning: There were 2 warnings in `mutate()`.
-    ## The first warning was:
-    ## ℹ In argument: `started_at = as.numeric(as.character(started_at))`.
-    ## Caused by warning:
-    ## ! NAs introduced by coercion
-    ## ℹ Run ]8;;ide:run:dplyr::last_dplyr_warnings()dplyr::last_dplyr_warnings()]8;; to see the 1 remaining warning.
-
-``` r
-alltrips %>% 
-  mutate(started_at = as.POSIXct(started_at, format ="%Y-%m-%d %H:%M:%OS"), ## this will fix the bad formatted dates.
-  ended_at = as.POSIXct(ended_at, format ="%Y-%m-%d %H:%M:%OS"))
-```
-
-- For this R version will get rid of the bad rows and continue with the
-  analysis
-
-<br/>
-
 **Forcing format to datetime started_at and ended_at**
 
 ``` r
 alltrips$ended_at <- as_datetime(alltrips$ended_at)
-```
-
-    ## Warning: 775105 failed to parse.
-
-``` r
 alltrips$started_at <- as_datetime(alltrips$started_at)
 ```
-
-    ## Warning: 775105 failed to parse.
-
-- 775105 failed to parse, and were replaced with na values.
 
 <br/>
 
@@ -395,7 +378,6 @@ rides and create a new version of the data frame (v2)**
 
 ``` r
 alltrips_v2 <- alltrips[!(alltrips$ride_length<0),]
-alltrips_v2 <-  alltrips_v2 %>% drop_na(ride_length) 
 ```
 
 <br/>
@@ -413,7 +395,7 @@ summary(alltrips_v2$ride_length)
 ```
 
     ##     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. 
-    ##     0.00     5.80    10.20    19.37    18.18 41387.25
+    ##     0.00     5.92    10.30    19.24    18.52 41387.25
 
 <br/>
 
@@ -428,8 +410,8 @@ alltrips_v2 %>%
     ## # A tibble: 2 × 5
     ##   member_casual `mean(ride_length)` `median(ride_length)` max(ride_len…¹ min(r…²
     ##   <chr>                       <dbl>                 <dbl>          <dbl>   <dbl>
-    ## 1 casual                       28.9                 12.6          41387.       0
-    ## 2 member                       12.7                  8.85          1560.       0
+    ## 1 casual                       28.6                 13            41387.       0
+    ## 2 member                       12.7                  8.95          1560.       0
     ## # … with abbreviated variable names ¹​`max(ride_length)`, ²​`min(ride_length)`
 
 <br/>
@@ -442,27 +424,33 @@ alltrips_v2 %>%
   summarize(mean(ride_length))
 ```
 
-    ## `summarise()` has grouped output by 'member_casual'. You can override using the
-    ## `.groups` argument.
-
     ## # A tibble: 14 × 3
     ## # Groups:   member_casual [2]
     ##    member_casual day_of_week `mean(ride_length)`
     ##    <chr>         <chr>                     <dbl>
-    ##  1 casual        Friday                     28.0
+    ##  1 casual        Friday                     27.5
     ##  2 casual        Monday                     28.5
-    ##  3 casual        Saturday                   32.3
-    ##  4 casual        Sunday                     34.2
+    ##  3 casual        Saturday                   32.0
+    ##  4 casual        Sunday                     33.5
     ##  5 casual        Thursday                   25.0
-    ##  6 casual        Tuesday                    25.6
-    ##  7 casual        Wednesday                  24.8
+    ##  6 casual        Tuesday                    25.4
+    ##  7 casual        Wednesday                  24.6
     ##  8 member        Friday                     12.6
-    ##  9 member        Monday                     12.2
-    ## 10 member        Saturday                   14.1
+    ##  9 member        Monday                     12.3
+    ## 10 member        Saturday                   14.2
     ## 11 member        Sunday                     14.1
     ## 12 member        Thursday                   12.3
-    ## 13 member        Tuesday                    12.2
-    ## 14 member        Wednesday                  12.2
+    ## 13 member        Tuesday                    12.1
+    ## 14 member        Wednesday                  12.1
+
+<br/>
+
+**For a better visualization we proceed to order the days labels**
+
+``` r
+alltrips_v2$day_of_week <- ordered(alltrips_v2$day_of_week, levels=c("Sunday", "Monday", 
+"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
+```
 
 <br/>
 
@@ -475,17 +463,6 @@ table_1 <- alltrips_v2 %>%
   arrange(member_casual) # Order by member_casual ASC
 ```
 
-    ## `summarise()` has grouped output by 'member_casual'. You can override using the
-    ## `.groups` argument.
-
-<br/>
-
-**For a better visualization we proceed to order the days labels**
-
-``` r
-alltrips_v2$day_of_week <- ordered(alltrips_v2$day_of_week, levels=c("Sunday", "Monday", 
-"Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"))
-```
 <br/>
 
 **Visualize avg duration and number of rides data by type and weekday**
@@ -496,7 +473,7 @@ ggplot(data = table_1, aes(x = day_of_week, y = number_of_rides, fill=member_cas
   labs(title = "Number of rides by type of user") # Added title
 ```
 
-![ggplot1](https://i.ibb.co/9tG18jp/image.png)<!-- -->
+![](R_Cyclistic_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 <br/>
 
@@ -508,9 +485,7 @@ ggplot(data = table_1, aes(x = day_of_week, y = avg_duration, fill=member_casual
   labs(title = "Average duration by type of user")
 ```
 
-![ggplot2](https://i.ibb.co/99gXMmq/image.png)<!-- -->
-
-<br/>
+![](R_Cyclistic_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> <br/>
 
 **We save the cleaned dataframe**
 
@@ -520,7 +495,7 @@ write.csv(alltrips_v2,file = "C:/Users/Seb/Documents/R_dataframe.csv")
 
 ------------------------------------------------------------------------
 
-## SHARE
+## SHARE (WIP)
 
 Once we understand our insights and know the key findings then we
 proceed to export the cleaned dataset into Tableau and check we miss any
@@ -561,9 +536,9 @@ following steps were applied:
 4.  Sync filters to better show findings.
 5.  Added a button to easily remove all filters.
 
-![]()
+![dashboard]()
 
-The dashboard can be seen **here - WIP** .
+The dashboard can be seen [here]().
 
 ### Presentation
 
@@ -581,7 +556,7 @@ Slides to create the presentation. This steps were applied:
     description in the speaker notes.
 6.  Added appendix for more details.
 
-Link to the presentation can be found [here](https://docs.google.com/presentation/d/11XoFu8RLbjXSOvPcGKejnESNxaD-otwVS699XTXTE48/edit?usp=sharing).
+Link to the presentation can be found [here]().
 
 <br/>
 
