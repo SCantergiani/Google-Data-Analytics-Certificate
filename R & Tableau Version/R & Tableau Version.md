@@ -53,7 +53,7 @@ Process. Which are:
 - Details of the case study can be found
   [here](https://drive.google.com/file/d/1OviIa6kTO48-rZu8fvniFVScWMq2KSES/view?usp=sharing).
 - SQL & Power BI version of this analysis can be found
-  [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20%26%20Power%20BI%20Version/SQL%20%26%20Power%20BI%20Version.md#google-data-analytics-certificate-capstone-project).
+  [here](https://github.com/SCantergiani/Google-Data-Analytics-Certificate#google-data-analytics-certificate-capstone-project).
 
 <br/>
 
