@@ -510,7 +510,7 @@ ggplot(data = table_1, aes(x = day_of_week, y = avg_duration, fill=member_casual
 
 ![ggplot2](https://i.ibb.co/99gXMmq/image.png)<!-- -->
 
-br/>
+<br/>
 
 **We save the cleaned dataframe**
 
