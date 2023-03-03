@@ -248,6 +248,8 @@ alltrips <- alltrips %>%
 
 <br/>
 
+------------------------------------------------------------------------
+
 ## PROCESS
 
 Clean up and add data to prepare for analysis
