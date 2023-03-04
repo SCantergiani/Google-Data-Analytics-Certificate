@@ -4,7 +4,7 @@
 
 <br/>
 
-![](Images/R.png)![](Images/Tableau.png)
+[![](Images/R.png)](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20%26%20Tableau%20Version/R%20%26%20Tableau%20Version.md#google-data-analytics-certificate-capstone-project)[![](Images/Tableau_vec.png)](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/R%20%26%20Tableau%20Version/R%20%26%20Tableau%20Version.md#google-data-analytics-certificate-capstone-project)
 
 <br/>
 

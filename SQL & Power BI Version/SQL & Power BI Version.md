@@ -3,7 +3,7 @@
 
 <br/>
 
-![](Images/SQL.png)![](Images/PBI.png)
+[![](Images/SQL.png)](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20%26%20Power%20BI%20Version/SQL%20%26%20Power%20BI%20Version.md#google-data-analytics-certificate-capstone-project)[![](Images/PBI.png)](https://github.com/SCantergiani/Google-Data-Analytics-Certificate/blob/main/SQL%20%26%20Power%20BI%20Version/SQL%20%26%20Power%20BI%20Version.md#google-data-analytics-certificate-capstone-project)
 
 <br/>
 
