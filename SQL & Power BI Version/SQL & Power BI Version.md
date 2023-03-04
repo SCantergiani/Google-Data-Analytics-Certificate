@@ -3,6 +3,10 @@
 
 <br/>
 
+![](Images/SQL.png)![](Images/PBI.png)
+
+<br/>
+
 **Data Analyst:** Sebastián Cantergiani
 
 **Client:** Cyclistic 
