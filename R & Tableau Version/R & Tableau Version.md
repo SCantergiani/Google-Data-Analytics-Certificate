@@ -4,6 +4,10 @@
 
 <br/>
 
+![](Images/R.png)![](Images/Tableau.png)
+
+<br/>
+
 **Data Analyst:** Sebastián Cantergiani
 
 **Client:** Cyclistic
