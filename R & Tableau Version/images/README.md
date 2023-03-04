@@ -1,4 +1,0 @@
-
-# test
-
-![](Tableau-Emblem.png)
